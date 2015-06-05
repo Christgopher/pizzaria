@@ -23,6 +23,7 @@ function totalCost(pizzas) {
 }
 
 $(document).ready(function() {
+  pizzas = []
   $("#add-pizza").click(function() {
     $("#new-pizzas").append('<div class="new-pizza">' +
                               '<div class="form-group">' +
@@ -51,16 +52,19 @@ $(document).ready(function() {
 
   $("form#new-pizza").submit(function(event) {
     event.preventDefault();
-    pizzas = []
+    $("#pre-order").show();
 
+    $("ul#pizzas").empty();
     $(".new-pizza").each(function() {
       var inputtedToppings = $(this).find(".new-toppings").val();
+
       var inputtedSize = $(this).find(".new-size").val();
       var newPizza = new Pizza(inputtedSize, inputtedToppings);
       pizzas.push(newPizza)
     });
+
     pizzas.forEach(function(pizza) {
-      $("ul#pizzas").append("<li>" + pizza.size + " pizza with " + pizza.ingredients + "." + "</li>");
+      $("ul#pizzas").append("<li>" + "A " + pizza.size + " pizza with " + pizza.ingredients.join(", ") + "." + "</li>");
 
     });
 

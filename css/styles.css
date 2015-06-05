@@ -1,3 +1,22 @@
 #checkout {
   display: none;
 }
+
+#checkout ul {
+  font-size: 20px;
+}
+
+#pre-order {
+  display: none;
+}
+#pre-order ul {
+  font-size: 20px;
+}
+
+body {
+  background: url(background.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover
+}
