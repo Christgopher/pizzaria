@@ -13,3 +13,11 @@ Pizza.prototype.pizzaCost = function() {
 
   return (cost + this.ingredients.length);
 }
+
+function totalCost(pizzas) {
+  var cost = 0;
+  pizzas.forEach(function(pizza) {
+    cost += pizza.pizzaCost();
+  })
+  return cost;
+}
